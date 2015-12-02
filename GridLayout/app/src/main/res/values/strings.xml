@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">GridLayout</string>
+    <string name="action_settings">Settings</string>
+    <string name="button_text">click me</string>
+    <string name="text_msg">hello</string>
+    <string name="gestureTest">swipe or scroll</string>
+    <string name="button2text">Hello World</string>
+    <string name="topText">Top</string>
+    <string name="bottomText">Bottom</string>
+</resources>
