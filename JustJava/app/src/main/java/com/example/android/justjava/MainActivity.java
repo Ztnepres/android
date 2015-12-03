@@ -2,9 +2,10 @@ package com.example.android.justjava;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
-import java.text.NumberFormat;
 
 /**
  * This app displays an order form to order coffee.
@@ -21,6 +22,10 @@ public class MainActivity extends ActionBarActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
+//Could not find a method onCheckboxClicked(View) in the activity class com.example.android.justjava.MainActivity for onClick handler
+        CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
+        boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
+        Log.v("MainActivity","Has whipped Cream: "+ hasWhippedCream);
         int price= quantity*5;
         String priceMessage ="Total: $"+price + "\nThank you!";
         displayMessage(priceMessage);
