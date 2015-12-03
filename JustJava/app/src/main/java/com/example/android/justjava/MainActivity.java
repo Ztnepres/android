@@ -27,7 +27,7 @@ public class MainActivity extends ActionBarActivity {
         boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
         Log.v("MainActivity","Has whipped Cream: "+ hasWhippedCream);
         int price= quantity*5;
-        String priceMessage ="Total: $"+price + "\nThank you!";
+        String priceMessage = createOrderSummary(price, hasWhippedCream);
         displayMessage(priceMessage);
     }
     /**
@@ -63,4 +63,14 @@ public class MainActivity extends ActionBarActivity {
                 R.id.quantity_text_view);
         quantityTextView.setText("" + number);
     }
+
+    private String createOrderSummary(int price, boolean addWhippedCream){
+        String priceMessage = "Name: Vincent the Turtle";
+        priceMessage += "\nAdd whipped cream? " +addWhippedCream;
+        priceMessage += "\nQuantity: " +quantity;
+        priceMessage += "\nTotal: $" + price;
+        priceMessage += "\nThank you!";
+        return priceMessage;
+    }
+
 }
