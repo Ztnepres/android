@@ -24,8 +24,10 @@ public class MainActivity extends ActionBarActivity {
 //Could not find a method onCheckboxClicked(View) in the activity class com.example.android.justjava.MainActivity for onClick handler
         CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
         boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
+        CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
+        boolean hasChocolate = chocolateCheckBox.isChecked();
         int price= quantity*5;
-        String priceMessage = createOrderSummary(price, hasWhippedCream);
+        String priceMessage = createOrderSummary(price, hasWhippedCream, hasChocolate);
         displayMessage(priceMessage);
     }
     /**
@@ -62,9 +64,10 @@ public class MainActivity extends ActionBarActivity {
         quantityTextView.setText("" + number);
     }
 
-    private String createOrderSummary(int price, boolean addWhippedCream){
+    private String createOrderSummary(int price, boolean addWhippedCream, boolean addChocolate){
         String priceMessage = "Name: Vincent the Turtle";
         priceMessage += "\nAdd whipped cream? " +addWhippedCream;
+        priceMessage += "\nAdd Chocolate? " +addChocolate;
         priceMessage += "\nQuantity: " +quantity;
         priceMessage += "\nTotal: $" + price;
         priceMessage += "\nThank you!";
